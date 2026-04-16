@@ -3,6 +3,7 @@ import utilitarios
 import calculadora
 import verificador_senha
 import gerador_de_senhas
+import caixa_eletronico
 while True:
     print('''
     -------------BEM-VINDO AO MENU----------------
@@ -11,6 +12,7 @@ while True:
     1 - Calculadora
     2 - Verificador de senhas forte
     3 - Gerador de senhas
+    4 - Caixa eletronico
     ''')
     num = int(input("digite um numero de 1 a 3: "))
     if num == 0:
@@ -25,3 +27,6 @@ while True:
     elif num == 3:
         utilitarios.limpa_tela()
         gerador_de_senhas.gerador_de_senhas()
+    elif num == 4:
+        utilitarios.limpa_tela()
+        caixa_eletronico.caixa_eletronico()

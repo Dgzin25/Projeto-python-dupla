@@ -46,7 +46,6 @@ Senha Simples:
 Retornando ao menu de senhas em 5 segundos
           ''')
     time.sleep(5)
-    utilitarios.limpa_tela()
 # ---Gerador de Senha Forte 9 caracteres, numero, letra maiuscula, minuscula, caractere especial
 def senha_forte():
     letras = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s",
@@ -72,6 +71,5 @@ Senha Forte:
 Retornando ao menu de senhas em 5 segundos
           ''')
     time.sleep(5)
-    utilitarios.limpa_tela()
 # possivel upgrade pra personalizar senha o usuario digita o tamanho da senha, 
 # se quer incluir numeros, caracteres, letras maiuscula
