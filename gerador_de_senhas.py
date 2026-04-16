@@ -1,16 +1,7 @@
 import random
 import time
-import os
-import platform
+import utilitarios
 
-# função de limpar o console
-def limpa_tela():
-    sistema = platform.system() # Pego o sistema que o usuario está usando
-    if sistema == "Windows": # verifico se o sistema dele é = ao windows, se for ele limpa o console
-        os.system("cls")
-    else:
-        os.system("clear") # se não for windows ele executa esse comando para limpar o console
-#----------------------------------------------------------
 
 # ---------------- Estrutura Principal ---------------
 def gerador_de_senhas():
@@ -23,16 +14,16 @@ def gerador_de_senhas():
         ''')
         num = int(input("digite o numero desejado: "))
         if num == 0:
-            limpa_tela()
+            utilitarios.limpa_tela()
             return
         elif num == 1:
-            limpa_tela()
+            utilitarios.limpa_tela()
             senha_simples()
         elif num == 2:
-            limpa_tela()
+            utilitarios.limpa_tela()
             senha_forte()
         else:
-            limpa_tela()
+            utilitarios.limpa_tela()
             print("Digite um numero valido")
             continue
 # ----------------Gerador de Senha simples somente 8 caracteres e um numero------------
@@ -55,7 +46,7 @@ Senha Simples:
 Retornando ao menu de senhas em 5 segundos
           ''')
     time.sleep(5)
-    limpa_tela()
+    utilitarios.limpa_tela()
 # ---Gerador de Senha Forte 9 caracteres, numero, letra maiuscula, minuscula, caractere especial
 def senha_forte():
     letras = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s",
@@ -81,6 +72,6 @@ Senha Forte:
 Retornando ao menu de senhas em 5 segundos
           ''')
     time.sleep(5)
-    limpa_tela()
+    utilitarios.limpa_tela()
 # possivel upgrade pra personalizar senha o usuario digita o tamanho da senha, 
 # se quer incluir numeros, caracteres, letras maiuscula

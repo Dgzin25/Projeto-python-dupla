@@ -1,5 +1,6 @@
 #estrutura da calculadora
 import math
+import utilitarios
 def calculadora():
     while True:
         print('''
@@ -13,18 +14,25 @@ def calculadora():
         ''')
         num = int(input("digite um numero da operção: "))
         if num == 0:
+            utilitarios.limpa_tela()
             return
         if num == 1:
+            utilitarios.limpa_tela()
             soma()
         elif num == 2:
+            utilitarios.limpa_tela()
             subtracao()
         elif num == 3:
+            utilitarios.limpa_tela()
             multiplicacao()
         elif num == 4:
+            utilitarios.limpa_tela()
             divisao()
         elif num == 5:
+            utilitarios.limpa_tela()
             raiz_quadrada()
         else:
+            utilitarios.limpa_tela()
             print("numero invalido")
 
 #-------------Funções das operações--------------
