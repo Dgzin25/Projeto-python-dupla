@@ -17,6 +17,6 @@ while True:
     elif num == 1:
         calculadora.calculadora()
     elif num == 2:
-        verificador_senha.verifcador_senha()
+        verificador_senha.verificador_senha()
     elif num == 3:
         gerador_de_senhas.gerador_de_senhas()
