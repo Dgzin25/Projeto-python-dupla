@@ -1,7 +1,7 @@
 #menu chamando todas funções
 import calculadora
 import verificador_senha
-
+import gerador_de_senhas
 while True:
     print('''
     -------------BEM-VINDO AO MENU----------------
@@ -9,11 +9,14 @@ while True:
     0 - para fechar o sistema
     1 - Calculadora
     2 - Verificador de senhas forte
+    3 - Gerador de senhas
     ''')
-    num = int(input("digite um numero de 1 a 2: "))
+    num = int(input("digite um numero de 1 a 3: "))
     if num == 0:
         break
     elif num == 1:
         calculadora.calculadora()
     elif num == 2:
         verificador_senha.verifcador_senha()
+    elif num == 3:
+        gerador_de_senhas.gerador_de_senhas()
