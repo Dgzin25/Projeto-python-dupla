@@ -1,0 +1,25 @@
+1- Revisão de BD
+
+    .O que são dados?
+    .O que são BD?
+    .O que é um SGBD?
+    .Qual o significado da SGBD?
+
+2 - Cite e explique as funções do SGBD.(OBS: 4 funções.)
+
+3 - Qual a importancia do bd, no contexto atual?
+
+4 - Explique o modelo Relacional
+
+5 - Crie uma tabela para e diferenciar as chaves: Primária e Estrangeira em um bd.
+
+6 - Qual a importancia da integridade de dados? Como se garante o uso dela?
+
+7 - Cite e explique de forma resumida, os modelos de BD obedecendo a evolução.
+
+8 - Crie um bd_escola com 3 tabelas:
+    (Aluno, Professor, Curso) usando os comandos do SQL
+
+9 - Use os comandos SQL para inserir 3 alunos na tabela aluno e atualizar a tabela
+    obs: Se dediquem na sintaxe e na função dos comandos.
+    Tabelas feitas no caderno
