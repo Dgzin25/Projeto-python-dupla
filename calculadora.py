@@ -110,5 +110,4 @@ def fatorial():
     else:
         resultado = math.factorial(num1)
         print(f"A fatorial de {num1} é: {resultado}")
-calculadora()
 #* A função "is_intenger()" é pra caso o número seja inteiro não ficar como float e sim inteiro (pra não confundir) *
