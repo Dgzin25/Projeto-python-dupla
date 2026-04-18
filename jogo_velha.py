@@ -12,6 +12,7 @@ def jogo_velha():
     4 | 5 | 6
     7 | 8 | 9   ''')
         win = False
+        empate = False
         cont = 0
         while True:
             num = int(input("Digite o numero da casa desejada: "))
@@ -19,6 +20,9 @@ def jogo_velha():
                 print("Entrada invalida")
                 continue
             else:
+                # N = COLUNAS DA MATRIZ
+                # formula L = (NUM - 1) // N pega a divisao inteira
+                # Formula C = (NUM - 1) % N, pega resto da divisao
                 linha = (num-1)//3
                 coluna = (num-1)%3 # pesquisei essa formula pois meu metodo ia repetir muitos if, eu ia numerar cada num com a devida casa da matriz
                 if jogo[linha][coluna] == "X" or jogo[linha][coluna] == "O":
@@ -45,22 +49,34 @@ def jogo_velha():
                     elif jogo[0][0] == jogo[1][1] == jogo[2][2] or jogo[0][2] == jogo[1][1] == jogo[2][0]:
                         win = True
                         break
+                if cont == 9 and win == False:
+                    empate = True
+                    break
                 print(f'''
         ------JOGO DA VELHA------
             {jogo[0][0]} | {jogo[0][1]} | {jogo[0][2]}
             {jogo[1][0]} | {jogo[1][1]} | {jogo[1][2]}
             {jogo[2][0]} | {jogo[2][1]} | {jogo[2][2]}
             ''')
-        if win == True:
-            print(f'''
-------WIN------
+        if win == True or empate == True:
+            if win:
+                print(f'''
+----------------------WIN--------------------
     {jogo[0][0]} | {jogo[0][1]} | {jogo[0][2]}
     {jogo[1][0]} | {jogo[1][1]} | {jogo[1][2]}
     {jogo[2][0]} | {jogo[2][1]} | {jogo[2][2]}
-    ''')
+====================VITORIA=================''')
+            else:
+                print(f'''
+----------------------DRAW--------------------
+    {jogo[0][0]} | {jogo[0][1]} | {jogo[0][2]}
+    {jogo[1][0]} | {jogo[1][1]} | {jogo[1][2]}
+    {jogo[2][0]} | {jogo[2][1]} | {jogo[2][2]}
+====================EMPATE=================''')
+                
             while True:
                 print('''
-=====VITORIA======
+=====MENU======
 1 - Jogar novamente
 2 - Voltar para o menu''')
                 num = int(input("Digite o numero desejado: "))
@@ -73,8 +89,3 @@ def jogo_velha():
                 else:
                     utilitarios.limpa_tela()
                     print("Entrada Invalida!")
-
-
-
-jogo_velha()
-    
