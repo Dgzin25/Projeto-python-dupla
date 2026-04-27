@@ -16,7 +16,7 @@ while True:
     4 - Caixa eletronico
     5 - jogo da velha
     ''')
-    num = int(input("digite um numero de 1 a 3: "))
+    num = int(input("digite um numero de 1 a 5: "))
     if num == 0:
         utilitarios.limpa_tela()
         break
