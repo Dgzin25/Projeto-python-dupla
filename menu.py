@@ -5,6 +5,7 @@ import verificador_senha
 import gerador_de_senhas
 import caixa_eletronico
 import jogo_velha
+import cadastro_caixa
 while True:
     print('''
     -------------BEM-VINDO AO MENU----------------
@@ -14,9 +15,14 @@ while True:
     2 - Verificador de senhas forte
     3 - Gerador de senhas
     4 - Caixa eletronico
-    5 - jogo da velha
+    5 - Cadastrar no caixa eletronico
+    6 - jogo da velha
     ''')
-    num = int(input("digite um numero de 1 a 5: "))
+    try:
+        num = int(input("digite um numero de 1 a 5: "))
+    except ValueError:
+        print("somente numeros inteiros!")
+        continue
     if num == 0:
         utilitarios.limpa_tela()
         break
@@ -33,5 +39,8 @@ while True:
         utilitarios.limpa_tela()
         caixa_eletronico.caixa_eletronico()
     elif num == 5:
+        utilitarios.limpa_tela()
+        cadastro_caixa.cadastro_caixa()
+    elif num == 6:
         utilitarios.limpa_tela()
         jogo_velha.jogo_velha()
