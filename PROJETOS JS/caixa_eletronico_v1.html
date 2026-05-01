@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1 - consultar saldo <br>
+    2 - sacar <br>
+    3 - depositar <br>
+    <form>
+        Numero desejado <input type="number" placeholder="Digite numero desejado: " id="escolha"> <br>
+        User <input type="text" placeholder="Digite seu user" id="nome"> <br>
+        User <input type="text" placeholder="Digite sua senha" id="senha"> <br>
+        valor saque/deposito <input type="number" placeholder="Digite o valor" id="valor">
+        <input type="submit" onclick="executar()">
+    </form>
+</body>
+</html>
+<script>
+    let usuarios = {
+        "diego": {"senha": "12345", "saldo": 1000},
+        "vitoria": {"senha": "diego", "saldo":2000},
+        "dg":{"senha": "dg", "saldo": 2000}
+    }; // lista de usuarios 
+    // ------------Funções verificações ---------------
+    function consultar_saldo(nome, usuarios){
+        return `seu saldo é ${usuarios[nome]["saldo"]}`;
+    };
+    function sacar(nome, usuarios, valor) {
+        return usuarios[nome]["saldo"]-= valor; 
+    };
+    function depositar(nome, usuarios, valor){
+        return usuarios[nome]["saldo"] += valor;
+    };
+    function validar_user(nome, senha, usuarios) {
+        if (nome in usuarios && usuarios[nome]["senha"] === senha){
+            return true
+        };
+        return false
+        };
+    function valida_saldo(nome, usuarios,valor) {
+        if (valor > usuarios[nome]["saldo"]){
+            return false
+        };
+        return true
+    };
+    // ------------Funções verificações ---------------
+    function executar(){
+        let senha = document.getElementById("senha").value; // Pegando os valores do id do html form
+        let nome = document.getElementById("nome").value; // Pegando os valores do id do html form
+        let escolha = parseInt(document.getElementById("escolha").value); // Pegando os valores do id do html form
+        let valor = parseFloat(document.getElementById("valor").value); // Pegando os valores do id do html form
+        event.preventDefault(); // codigo para cancelar o reenvio do form e recarregar a pagina sem querer.
+        if (!validar_user(nome, senha, usuarios)) { // verificando se o resultado é False
+            alert("usuario ou senha incorreta!")
+            return
+        };
+        switch (escolha){
+            case 1:
+                alert(consultar_saldo(nome, usuarios));
+                break
+            case 2:
+                if (valida_saldo(nome,usuarios,valor)){
+                    alert ("seu saldo atual é " + sacar(nome, usuarios, valor));
+                    break};
+                alert("Saldo insuficiente!")
+                break  
+            case 3:
+                alert ("seu saldo atual é " + depositar(nome, usuarios, valor));
+                break  
+    };}; 
+</script>
