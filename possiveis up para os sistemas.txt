@@ -1,9 +1,0 @@
-fiz uma prova hoje e esqueci a funcao que verifica se um caractere é uma letra pra voce vé kkkkkk
-
-tive que improvisar usando
-propomt = input("digite o propomt")
-tem_letra = False
-letras = "qwertyuiopasdfghjklçzxcvbnm"
-for i in propomt:
-    if i in letras:
-        tem_letra = True

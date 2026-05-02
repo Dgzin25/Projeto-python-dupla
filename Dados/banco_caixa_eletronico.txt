@@ -1,2 +1,0 @@
-diego;12345;5000
-vitoria;diego;800
