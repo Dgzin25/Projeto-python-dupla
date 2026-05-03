@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="central">
+        <h1>Bem-vindo a Calculadora</h1>
+        <form>
+            Operações Disponiveis: +, -, *, / <br>
+            Primeiro numero <input type="number" placeholder="primeiro numero " id="num1"> <br>
+            Operação <input type="text" placeholder="Operação" id="operacao"><br>
+            Segundo numero<input type="number" placeholder="Segundo numero" id="num2"><br>
+            <button type="button" onclick="executar(event)">Resultado</button>
+            <p id="mostrar">Painel mostrar o resultado</p>
+        </form>
+    </div>
+</body>
+
+<script>
+    function somar(num1, num2){
+        return `${num1} + ${num2} = ${num1 + num2}`;
+    };
+    function subtracao(num1, num2){
+        return `${num1} - ${num2} = ${num1 - num2}`;
+    };
+    function multiplicar(num1, num2) {
+        return `${num1} x ${num2} = ${num1 * num2}`;
+    };
+    function dividir(num1, num2) {
+        return `${num1} / ${num2} = ${num1/num2}`;
+    };
+    function executar(event){
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let operacao = document.getElementById("operacao").value.trim();
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let resultado = document.getElementById("mostrar");
+        event.preventDefault(); // codigo para cancelar o reenvio do form e recarregar a pagina sem querer.
+        resultado.innerText = logica(num1, num2, operacao);
+
+        
+    };
+    function logica(num1, num2, operacao){
+        let valores = "+-*/"
+        if (valores.includes(operacao) && isNaN(num1) === false && isNaN(num2) === false){
+            if (operacao === "+"){
+                return somar(num1, num2);
+            } else if (operacao === "-"){
+                return subtracao(num1, num2);
+            } else if (operacao === "*") {
+                return multiplicar(num1, num2);
+            } else if (operacao === "/") {
+                return dividir(num1, num2);
+            };
+        } else {
+            return "Entrada invalida!"
+        }
+    };
+</script>
+</html>
